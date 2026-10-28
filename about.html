@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Jokema Foundation, its purpose, values and commitment to supporting communities in Lae, Morobe Province, Papua New Guinea.">
+  <meta name="theme-color" content="#103d2d">
+  <title>About Us | Jokema Foundation</title>
+  <style>
+    :root {
+      --green: #103d2d;
+      --green-deep: #08291f;
+      --green-soft: #eaf2ed;
+      --gold: #d9b45b;
+      --gold-light: #f3e7c6;
+      --ink: #1c2b24;
+      --muted: #617067;
+      --paper: #fbfaf6;
+      --white: #fff;
+      --line: #e4e9e4;
+      --shadow: 0 18px 48px rgba(8, 41, 31, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+    .topline { height: 5px; background: var(--gold); }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(16,61,45,.09); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px 14px 14px 4px; background: var(--green); color: var(--gold); font-weight: 900; font-size: 21px; letter-spacing: -1px; box-shadow: 0 6px 16px rgba(16,61,45,.16); }
+    .brand-name { display: block; font-weight: 800; color: var(--green); font-size: 17px; line-height: 1.2; letter-spacing: -.3px; }
+    .brand-sub { display: block; color: var(--muted); font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; margin-top: 4px; }
+    nav { display: flex; align-items: center; gap: 27px; }
+    nav a { font-size: 13px; font-weight: 700; color: #45544b; transition: color .2s; }
+    nav a:hover, nav a[aria-current="page"] { color: var(--green); }
+    nav a[aria-current="page"] { position: relative; }
+    nav a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 3px; border-radius: 4px; background: var(--gold); }
+    .nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; border-radius: 7px; font-weight: 800; font-size: 13px; transition: transform .2s, background .2s; }
+    .nav-cta, .btn-primary { background: var(--green); color: white; }
+    .nav-cta:hover, .btn-primary:hover { background: var(--green-deep); transform: translateY(-2px); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; color: var(--green); border-radius: 8px; padding: 9px 12px; font-size: 20px; cursor: pointer; }
+    .hero { position: relative; overflow: hidden; background: var(--green); color: white; }
+    .hero::before, .hero::after { content: ""; position: absolute; border: 1px solid rgba(217,180,91,.24); border-radius: 50%; pointer-events: none; }
+    .hero::before { width: 510px; height: 510px; right: -100px; top: -210px; }
+    .hero::after { width: 350px; height: 350px; right: -20px; top: -130px; }
+    .hero-inner { position: relative; z-index: 1; padding: 78px 0 83px; max-width: 780px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--gold); }
+    h1 { font-size: clamp(38px, 5.4vw, 64px); line-height: 1.08; letter-spacing: -2px; margin: 18px 0 21px; }
+    .hero p { max-width: 650px; color: rgba(255,255,255,.78); font-size: 17px; margin: 0; }
+    .crumbs { margin-top: 27px; color: rgba(255,255,255,.62); font-size: 12px; }
+    .crumbs a { color: var(--gold-light); }
+    .section { padding: 82px 0; }
+    .section-head { max-width: 700px; margin-bottom: 38px; }
+    .kicker { color: #98752b; text-transform: uppercase; letter-spacing: 1.8px; font-size: 11px; font-weight: 900; }
+    h2 { color: var(--green); font-size: clamp(29px, 3.6vw, 42px); line-height: 1.17; letter-spacing: -1px; margin: 10px 0 16px; }
+    .lead { font-size: 17px; color: var(--muted); margin: 0; }
+    .story-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 64px; align-items: center; }
+    .story-copy p { color: var(--muted); margin: 0 0 16px; }
+    .story-panel { min-height: 360px; border-radius: 18px; padding: 34px; color: white; background: linear-gradient(145deg, rgba(8,41,31,.95), rgba(16,61,45,.91)), radial-gradient(circle at 80% 15%, rgba(217,180,91,.5), transparent 42%); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: var(--shadow); }
+    .story-panel::before { content: ""; position: absolute; width: 260px; height: 260px; border: 1px solid rgba(217,180,91,.4); border-radius: 50%; top: -80px; right: -50px; }
+    .story-panel::after { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(217,180,91,.25); border-radius: 50%; top: -40px; right: -10px; }
+    .panel-symbol { position: absolute; top: 35px; left: 35px; width: 62px; height: 62px; border: 1px solid rgba(217,180,91,.55); color: var(--gold); display: grid; place-items: center; border-radius: 16px; font-size: 29px; }
+    .story-panel h3 { position: relative; margin: 0 0 10px; font-size: 28px; line-height: 1.2; max-width: 350px; }
+    .story-panel p { position: relative; color: rgba(255,255,255,.75); margin: 0; max-width: 380px; font-size: 14px; }
+    .principles { background: var(--green-soft); }
+    .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .principle { background: white; padding: 28px; border: 1px solid rgba(16,61,45,.07); border-radius: 12px; }
+    .principle-icon { display: grid; place-items: center; width: 45px; height: 45px; border-radius: 12px; background: var(--gold-light); color: var(--green); font-size: 20px; margin-bottom: 17px; }
+    .principle h3 { color: var(--green); font-size: 19px; margin: 0 0 8px; }
+    .principle p { color: var(--muted); font-size: 14px; margin: 0; }
+    .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+    .focus-card { padding: 26px 23px; background: white; border: 1px solid var(--line); border-radius: 12px; transition: transform .2s, box-shadow .2s; }
+    .focus-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .focus-num { color: #a88332; font-size: 12px; font-weight: 900; letter-spacing: 1px; }
+    .focus-card h3 { color: var(--green); margin: 12px 0 8px; font-size: 18px; }
+    .focus-card p { color: var(--muted); font-size: 14px; margin: 0; }
+    .commitment { padding: 65px 0; background: var(--green-deep); color: white; }
+    .commitment-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .commitment h2 { color: white; margin: 8px 0 10px; max-width: 650px; }
+    .commitment p { margin: 0; color: rgba(255,255,255,.72); max-width: 650px; }
+    .btn-gold { flex-shrink: 0; background: var(--gold); color: var(--green-deep); }
+    .btn-gold:hover { background: #e7c878; transform: translateY(-2px); }
+    footer { background: #061f17; color: rgba(255,255,255,.7); padding: 48px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 42px; padding-bottom: 35px; }
+    .footer-brand { color: white; font-weight: 800; font-size: 18px; }
+    footer p { max-width: 360px; font-size: 13px; color: rgba(255,255,255,.58); }
+    footer h4 { color: var(--gold); margin: 4px 0 13px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.3px; }
+    .footer-links { display: grid; gap: 8px; font-size: 13px; }
+    .footer-links a:hover { color: white; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.12); padding-top: 18px; display: flex; justify-content: space-between; gap: 16px; font-size: 11px; color: rgba(255,255,255,.46); }
+    .note { margin-top: 18px; padding: 12px 14px; background: #fff8e8; border-left: 3px solid var(--gold); color: #6d5b31; font-size: 12px; border-radius: 0 6px 6px 0; }
+    @media (max-width: 850px) {
+      nav { gap: 15px; }
+      nav a { font-size: 12px; }
+      .nav-cta { padding: 10px 12px; }
+      .story-grid { gap: 35px; }
+      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 30px, 1140px); }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: inline-flex; }
+      nav { display: none; position: absolute; left: 0; right: 0; top: 72px; padding: 20px 22px 24px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 18px 25px rgba(0,0,0,.06); flex-direction: column; align-items: stretch; gap: 18px; }
+      nav.open { display: flex; }
+      nav a[aria-current="page"]::after { display: none; }
+      .nav-cta { text-align: center; }
+      .hero-inner { padding: 60px 0 62px; }
+      h1 { letter-spacing: -1.3px; }
+      .hero p { font-size: 15px; }
+      .section { padding: 60px 0; }
+      .story-grid, .principles-grid, .focus-grid, .footer-grid { grid-template-columns: 1fr; }
+      .story-grid { gap: 28px; }
+      .story-panel { min-height: 310px; }
+      .commitment-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { gap: 25px; }
+      .copyright { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Jokema Foundation home">
+        <span class="brand-mark">JF</span>
+        <span><span class="brand-name">Jokema Foundation</span><span class="brand-sub">Community • Opportunity • Hope</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About Us</a>
+        <a href="programs.html">Our Programs</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="news.html">News & Stories</a>
+        <a class="nav-cta" href="contact.html">Contact Us ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <span class="eyebrow">Who we are</span>
+        <h1>About Jokema Foundation</h1>
+        <p>Working towards stronger communities, greater opportunity and a brighter future for people in Lae, Morobe Province, and across Papua New Guinea.</p>
+        <div class="crumbs"><a href="index.html">Home</a> &nbsp; / &nbsp; About Us</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap story-grid">
+        <div class="story-copy">
+          <span class="kicker">Our story</span>
+          <h2>Local commitment. Lasting community impact.</h2>
+          <p>Jokema Foundation is presented here as a community-focused organisation with a commitment to helping people access opportunities, build practical skills and contribute to the wellbeing of their communities.</p>
+          <p>Based in Lae, Morobe Province, Papua New Guinea, the foundation’s website can be a place to share its work, recognise community partners, celebrate local achievements and explain how supporters can get involved.</p>
+          <p>Our approach is grounded in respect, collaboration and the belief that meaningful progress is strongest when communities help shape the solutions that affect them.</p>
+          <div class="note"><strong>Before publishing:</strong> confirm the foundation’s official registration name, founding story, mission, leadership, and current programme details with the organisation.</div>
+        </div>
+        <div class="story-panel">
+          <div class="panel-symbol" aria-hidden="true">✦</div>
+          <h3>Every community deserves the chance to thrive.</h3>
+          <p>Building opportunity through community partnership, learning and practical action.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Our direction</span>
+          <h2>Mission, vision and values</h2>
+          <p class="lead">A clear purpose and shared values help guide responsible, community-led work. The statements below are proposed website copy and should be approved by the foundation before publication.</p>
+        </div>
+        <div class="principles-grid">
+          <article class="principle">
+            <div class="principle-icon" aria-hidden="true">◎</div>
+            <h3>Our Vision</h3>
+            <p>Communities where people have the knowledge, confidence and opportunities to shape a better future for themselves and the next generation.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-icon" aria-hidden="true">↗</div>
+            <h3>Our Mission</h3>
+            <p>To support practical community development by encouraging learning, enterprise, inclusion and partnerships that respond to local priorities.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-icon" aria-hidden="true">♡</div>
+            <h3>Respect & Inclusion</h3>
+            <p>Listen to communities, respect local cultures and work towards meaningful participation for people from different backgrounds.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-icon" aria-hidden="true">◇</div>
+            <h3>Integrity & Partnership</h3>
+            <p>Act responsibly, communicate clearly and build trusted relationships with communities, organisations and supporters.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">What guides our work</span>
+          <h2>Areas where we can make a difference</h2>
+          <p class="lead">These suggested focus areas can help explain the foundation’s work. Keep only the areas that reflect its confirmed programmes and priorities.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <span class="focus-num">01 / LEARNING</span>
+            <h3>Education & Skills</h3>
+            <p>Encouraging access to learning, practical skills and knowledge that help people participate confidently in community and economic life.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-num">02 / LIVELIHOODS</span>
+            <h3>Enterprise & Financial Literacy</h3>
+            <p>Supporting awareness of money management, entrepreneurship and pathways towards sustainable livelihoods where these align with the foundation’s work.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-num">03 / COMMUNITY</span>
+            <h3>Community Wellbeing</h3>
+            <p>Working with local groups and partners on initiatives shaped by community needs, shared responsibility and long-term benefit.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-num">04 / YOUTH</span>
+            <h3>Youth Opportunity</h3>
+            <p>Helping young people discover their strengths, develop confidence and explore positive pathways for their future.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-num">05 / PARTNERSHIPS</span>
+            <h3>Collaboration</h3>
+            <p>Connecting with community leaders, schools, civil society, public institutions and responsible partners to support shared goals.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-num">06 / LOCAL ACTION</span>
+            <h3>Culture & Reconciliation</h3>
+            <p>Recognising the importance of local identity, mutual understanding and peaceful relationships in strong communities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="commitment">
+      <div class="wrap commitment-inner">
+        <div>
+          <span class="eyebrow">Be part of the journey</span>
+          <h2>Progress starts when people work together.</h2>
+          <p>Interested in partnering, volunteering or learning more about the foundation’s work? Get in touch to start a conversation.</p>
+        </div>
+        <a class="btn btn-gold" href="contact.html">Connect with us <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Jokema Foundation</div>
+          <p>Community-focused work for opportunity, learning and a brighter future in Lae, Morobe Province, Papua New Guinea.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Our Programs</a>
+            <a href="initiatives.html">Initiatives</a>
+          </div>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact the Foundation</a>
+            <a href="news.html">News & Stories</a>
+          </div>
+          <p>Lae, Morobe Province<br> Papua New Guinea</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© <span id="year"></span> Jokema Foundation. All rights reserved.</span>
+        <span>Community • Opportunity • Hope</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuButton.textContent = isOpen ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+      menuButton.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
